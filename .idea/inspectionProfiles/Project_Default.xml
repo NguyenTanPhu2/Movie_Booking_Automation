@@ -4,9 +4,14 @@
     <inspection_tool class="groupsTestNG" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="groups">
         <value>
-          <list size="2">
+          <list size="7">
             <item index="0" class="java.lang.String" itemvalue="logout" />
             <item index="1" class="java.lang.String" itemvalue="booking" />
+            <item index="2" class="java.lang.String" itemvalue="footer" />
+            <item index="3" class="java.lang.String" itemvalue="cinema" />
+            <item index="4" class="java.lang.String" itemvalue="banner" />
+            <item index="5" class="java.lang.String" itemvalue="news" />
+            <item index="6" class="java.lang.String" itemvalue="movie-detail" />
           </list>
         </value>
       </option>

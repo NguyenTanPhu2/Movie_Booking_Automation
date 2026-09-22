@@ -20,11 +20,8 @@ public class BannerTest extends BaseTest {
     @Test(priority = 1, groups = "banner")
     public void verify_Banner_WithOut_Alt_Text() {
         ///VP:Banner does not display the text "Img alt"
-<<<<<<< HEAD
         LOG.info("VP:Banner does not display the text \"Img alt\"");
         ExtentReportManager.info("VP:Banner does not display the text \"Img alt\"");
-=======
->>>>>>> 74bdcb9c4069421aafabebbcb8cd660422fe597a
         boolean recordingBannerAlt = banner.isAltTextDisplayed();
         Assert.assertFalse(recordingBannerAlt, "Banner is displaying the text 'Img alt'");
     }

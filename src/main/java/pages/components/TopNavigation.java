@@ -14,6 +14,7 @@ public class TopNavigation extends BasePage {
     private By byLnkNews;
     private By byLnkApplication;
     private By byLnkProfile;
+    private By byBtnMenu;
 
     private By byIsSchedule;
     private By byIsCinema;
@@ -33,6 +34,7 @@ public class TopNavigation extends BasePage {
         this.byLnkNews = By.xpath("//a[h4[text()='Tin Tức']]");
         this.byLnkApplication = By.xpath("//a[h4[text()='Ứng Dụng']]");
         this.byLnkProfile = By.xpath("//a[h3[text()='Clara']]");
+        this.byBtnMenu = By.cssSelector("svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge");
 
         this.byIsSchedule = By.xpath("//div[@id='lichChieu']");
         this.byIsCinema = By.xpath("//div[@id='cumRap']");
@@ -124,5 +126,9 @@ public class TopNavigation extends BasePage {
 
     public String isUserDisplays(){
         return getText(byIsAccount);
+    }
+
+    public void clickMenu() {
+        click(byBtnMenu);
     }
 }

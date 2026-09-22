@@ -103,6 +103,19 @@ public class BasePage {
         click(locator, TimeOutConstants.DEFAULT_TIMEOUT);
     }
 
+    /// Action click via JS to avoid obstruction by overlays
+    public void jsClick(By locator, long timeOutInSec) {
+        WebElement element = waitVisibilityOfElementLocated(locator, timeOutInSec);
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView({block: 'center'}); arguments[0].click();",
+                element
+        );
+    }
+
+    public void jsClick(By locator) {
+        jsClick(locator, TimeOutConstants.DEFAULT_TIMEOUT);
+    }
+
     /// Action getText
     // enter time out
     public String getText(By locator, long timeOutInSec) {
@@ -278,9 +291,13 @@ public class BasePage {
     ///get Token
     public String getLocalStorage(String key) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        return (String) js.executeScript(
-                "return localStorage.getItem(arguments[0]);",
-                key
-        );
+        return (String) js.executeScript("return localStorage.getItem(arguments[0]);", key);
+    }
+
+    ///Click outSide
+    public void clickOutside() {
+        new Actions(driver)
+                .sendKeys(Keys.ESCAPE)
+                .perform();
     }
 }

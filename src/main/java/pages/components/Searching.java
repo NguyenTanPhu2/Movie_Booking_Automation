@@ -34,7 +34,7 @@ public class Searching extends BasePage {
         return getText(byAlertError);
     }
 
-    public boolean isSearchingResult(){
+    public boolean isSearchingResult() {
         return isElementDisplayed(bySearchResults);
     }
 }

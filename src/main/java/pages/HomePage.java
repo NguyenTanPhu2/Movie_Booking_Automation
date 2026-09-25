@@ -13,11 +13,14 @@ public class HomePage extends CommonPage {
     private By byIsTrailer;
     private By byStrangePageFilmList;
     private By bySchedule;
+    private By byCloseTrailer;
 
     public HomePage(WebDriver driver) {
         super(driver);
         this.byIsTrailer = By.xpath("//div[@class='modal-video']");
         this.bySchedule = By.xpath("//div[@id='lichChieu']");
+        this.byCloseTrailer = By.xpath("//button[@class='modal-video-close-btn']");
+
     }
 
     public void clickOnMovieName(String nameFilm) {
@@ -25,7 +28,7 @@ public class HomePage extends CommonPage {
         click(byClickOnName);
     }
 
-    public void clickBackBrowser(){
+    public void clickBackBrowser() {
         getDriver().navigate().back();
     }
 
@@ -65,5 +68,13 @@ public class HomePage extends CommonPage {
 
     public void scrollSchdule() {
         scroll(bySchedule, 500);
+    }
+
+    public boolean isScheduleDisplays() {
+        return isElementDisplayed(bySchedule);
+    }
+
+    public void clickCloseTrailer() {
+        click(byCloseTrailer);
     }
 }

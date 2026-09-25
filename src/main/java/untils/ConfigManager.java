@@ -12,8 +12,8 @@ public class ConfigManager {
     private static Properties properties = new Properties();
 
     public static void loadProperties() {
-        try(InputStream input = ConfigManager.class.getClassLoader().getResourceAsStream("configure.properties")) {
-            if(input == null) {
+        try (InputStream input = ConfigManager.class.getClassLoader().getResourceAsStream("configure.properties")) {
+            if (input == null) {
                 logger.warn("configure.properties file not found");
                 return;
             }

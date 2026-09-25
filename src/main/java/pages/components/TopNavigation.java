@@ -40,8 +40,8 @@ public class TopNavigation extends BasePage {
         this.byIsCinema = By.xpath("//div[@id='cumRap']");
         this.byIsNews = By.xpath("//div[@id='tinTuc']");
         this.byIsApplication = By.xpath("//div[@id='ungDung']");
-        this.byIsAvatar =By.xpath("//img[@alt='Avatar']");
-        this.byIsAccount= By.xpath("//h3[text()='Clara']");
+        this.byIsAvatar = By.xpath("//img[@alt='Avatar']");
+        this.byIsAccount = By.xpath("//h3[text()='Clara']");
 
 
     }
@@ -122,13 +122,19 @@ public class TopNavigation extends BasePage {
         click(byLnkProfile);
     }
 
-    public boolean isAvatarDisplayed() {return isElementDisplayed(byIsAvatar);}
+    public boolean isAvatarDisplayed() {
+        return isElementDisplayed(byIsAvatar);
+    }
 
-    public String isUserDisplays(){
+    public String isUserDisplays() {
         return getText(byIsAccount);
     }
 
     public void clickMenu() {
         click(byBtnMenu);
+    }
+
+    public boolean isMenuDisplay() {
+        return isElementDisplayed(byBtnMenu);
     }
 }

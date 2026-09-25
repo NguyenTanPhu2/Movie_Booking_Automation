@@ -28,7 +28,8 @@ public class RegisterTest extends BaseTest {
         loginPage = new LoginPage(driver);
     }
 
-    @Test(priority = 1, dataProvider = "register-valid", dataProviderClass = TestDataProvider.class, groups = "register")
+    @Test(priority = 1, dataProvider = "register-valid",
+            dataProviderClass = TestDataProvider.class, groups = "register")
     public void verify_Register_Successfully(String account, String password, String fullName, String email) {
 
         ///Step 1: Navigate to Register Page
@@ -205,7 +206,8 @@ public class RegisterTest extends BaseTest {
         Assert.assertEquals(recordingErrorEmail, "email không hợp lệ", "Invalid email error message is incorrect");
     }
 
-    @Test(priority = 4, dataProvider = "register-hide-password", dataProviderClass = TestDataProvider.class, groups = "register")
+    @Test(priority = 4, dataProvider = "register-hide-password",
+            dataProviderClass = TestDataProvider.class, groups = "register")
     public void verify_Hide_Password(String account, String password, String fullName, String email) {
         ///Step 1: Navigate to Register Page
         LOG.info("Step 1: Navigate to Register Page");

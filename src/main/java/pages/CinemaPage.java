@@ -59,12 +59,12 @@ public class CinemaPage extends CommonPage {
     }
 
     public boolean isPosterDisplayed(String movieName) {
-        byPoster = By.xpath("//img[@alt='"+movieName+"']");
+        byPoster = By.xpath("//img[@alt='" + movieName + "']");
         return isElementDisplayed(byPoster);
     }
 
-    public void clickSchedule(String date, String time){
-        byChooseSchedule = By.xpath("//div[p[text()='"+date+"'] and h3[text()='"+time+"']]");
+    public void clickSchedule(String date, String time) {
+        byChooseSchedule = By.xpath("//div[p[text()='" + date + "'] and h3[text()='" + time + "']]");
         click(byChooseSchedule);
     }
 }

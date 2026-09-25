@@ -59,4 +59,8 @@ public class LoginPage extends CommonPage {
     public String getTxtProfile() {
         return getText(byLnkProfile);
     }
+
+    public String getToken(String key) {
+        return getLocalStorage(key);
+    }
 }

@@ -30,8 +30,8 @@ public class MovieDetailPage extends CommonPage {
         this.byScheduleArea = By.xpath("//div[@role='tabpanel']");
         this.byNewiFrame = By.cssSelector(".modal-video iframe");
         this.byNameTrailer = By.xpath("//a[contains(@class,'ytmVideoInfoVideoTitle')]//span");
-        this.byPoster=By.xpath("//div[contains(@class,'MuiGrid-grid-xs-3')]/div[contains(@style,'background-image')]");
-        this.byPlayTrailer =By.xpath("//button[span[@class='MuiFab-label']]");
+        this.byPoster = By.xpath("//div[contains(@class,'MuiGrid-grid-xs-3')]/div[contains(@style,'background-image')]");
+        this.byPlayTrailer = By.xpath("//button[span[@class='MuiFab-label']]");
         this.byCloseTrailer = By.xpath("//button[@class='modal-video-close-btn']");
         this.byIsTrailer = By.xpath("//div[@class='modal-video']");
     }
@@ -79,11 +79,11 @@ public class MovieDetailPage extends CommonPage {
         return getIFrame(byNameTrailer);
     }
 
-    public void hoverPoster(){
+    public void hoverPoster() {
         hoverMouse(byPoster);
     }
 
-    public void clickPlayTrailer(){
+    public void clickPlayTrailer() {
         hoverPoster();
         click(byPlayTrailer);
     }
@@ -92,7 +92,7 @@ public class MovieDetailPage extends CommonPage {
         click(byCloseTrailer);
     }
 
-    public boolean isTrailerDisplays(){
+    public boolean isTrailerDisplays() {
         return isElementDisplayed(byIsTrailer);
     }
 }

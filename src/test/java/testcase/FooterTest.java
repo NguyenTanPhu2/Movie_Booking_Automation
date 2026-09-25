@@ -73,7 +73,7 @@ public class FooterTest extends BaseTest {
         LOG.info("VP: Verify navigate to Brand Guidelines Page");
         ExtentReportManager.info("VP: Verify navigate to Brand Guidelines Page");
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl,tix[1][1] , "Current URL is incorrect");
+        Assert.assertEquals(currentUrl, tix[1][1], "Current URL is incorrect");
 
     }
 
@@ -144,7 +144,7 @@ public class FooterTest extends BaseTest {
         Assert.assertEquals(currentUrl, logoPartner[0][1], "Current URL is incorrect");
     }
 
-    @Test(priority = 7,dataProvider = "footer-mobile-social",
+    @Test(priority = 7, dataProvider = "footer-mobile-social",
             dataProviderClass = TestDataProvider.class, groups = "footer")
     public void verify_iOS_App_Link(String[] link) {
 
@@ -165,10 +165,10 @@ public class FooterTest extends BaseTest {
         footer.switchToNewTab();
 
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl,link[0] , "Current URL is incorrect");
+        Assert.assertEquals(currentUrl, link[0], "Current URL is incorrect");
     }
 
-    @Test(priority = 8,dataProvider = "footer-mobile-social",
+    @Test(priority = 8, dataProvider = "footer-mobile-social",
             dataProviderClass = TestDataProvider.class, groups = "footer")
     public void verify_Android_App_Link(String[] link) {
         ///Step 1: Scroll to end page
@@ -187,10 +187,10 @@ public class FooterTest extends BaseTest {
         // Switch sang tab mới
         footer.switchToNewTab();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl,link[1] , "Current URL is incorrect");
+        Assert.assertEquals(currentUrl, link[1], "Current URL is incorrect");
     }
 
-    @Test(priority = 9,dataProvider = "footer-mobile-social",
+    @Test(priority = 9, dataProvider = "footer-mobile-social",
             dataProviderClass = TestDataProvider.class, groups = "footer")
     public void verify_Facebook_Link(String[] link) {
         ///Step 1: Scroll to end page
@@ -212,7 +212,7 @@ public class FooterTest extends BaseTest {
         Assert.assertEquals(currentUrl, link[2], "Current URL is incorrect");
     }
 
-    @Test(priority = 10,dataProvider = "footer-mobile-social",
+    @Test(priority = 10, dataProvider = "footer-mobile-social",
             dataProviderClass = TestDataProvider.class, groups = "footer")
     public void verify_Zalo_Link(String[] link) {
         ///Step 1: Scroll to end page
@@ -234,7 +234,7 @@ public class FooterTest extends BaseTest {
         Assert.assertEquals(currentUrl, link[3], "Current URL is incorrect");
     }
 
-    @Test(priority =11,groups = "footer")
+    @Test(priority = 11, groups = "footer")
     public void verify_Copyright_Information() {
         ///Step 1: Scroll to end page
         LOG.info("Step 1: Scroll to end page");
@@ -248,7 +248,7 @@ public class FooterTest extends BaseTest {
         Assert.assertEquals(recordingCopyright, "TIX – SẢN PHẨM CỦA CÔNG TY CỔ PHẦN ZION", "Copyright text is incorrect");
     }
 
-    @Test(priority =12, groups = "footer")
+    @Test(priority = 12, groups = "footer")
     public void verify_Ministry_Of_Industry_And_Trade_Link() {
         ///Step 1: Scroll to end page
         LOG.info("Step 1: Scroll to end page");

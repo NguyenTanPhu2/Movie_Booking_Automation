@@ -351,7 +351,7 @@ public class ProfileTest extends BaseTest {
 
     @Test(priority = 9, dataProvider = "profile-update-successfully", dataProviderClass = TestDataProvider.class, groups = "profile")
     public void verify_Update_Account_Successfully(String account, String password, String fullName,
-                                                   String phoneNumber,String email) {
+                                                   String phoneNumber, String email) {
         ///Step 1: Navigate to Login page
         LOG.info("Step 1: Navigate to Login Page");
         ExtentReportManager.info("Step 1: Navigate to Login Page");
@@ -446,14 +446,14 @@ public class ProfileTest extends BaseTest {
         ///VP 1: Verify FullName don't update
         LOG.info("VP 1: Verify FullName don't update");
         ExtentReportManager.info("VP 1: Verify FullName don't update");
-        String recordingFullName= profilePage.getTxtUserName();
-        Assert.assertEquals(recordingFullName,fullNameBeforeUpdate,"FullName was updated unexpectedly");
+        String recordingFullName = profilePage.getTxtUserName();
+        Assert.assertEquals(recordingFullName, fullNameBeforeUpdate, "FullName was updated unexpectedly");
 
         ///VP 2: Verify phoneNumber don't update
         LOG.info("VP 2: Verify phoneNumber don't update");
         ExtentReportManager.info("VP 2: Verify phoneNumber don't update");
         String recordingPhoneNumber = profilePage.getTxtPhoneNumber();
-        Assert.assertEquals(recordingPhoneNumber,phoneNumberBeforeUpdate,"phoneNumber was updated unexpectedly");
+        Assert.assertEquals(recordingPhoneNumber, phoneNumberBeforeUpdate, "phoneNumber was updated unexpectedly");
     }
 
 }

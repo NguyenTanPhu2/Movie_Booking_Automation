@@ -193,7 +193,7 @@ public class MovieDetailTest extends BaseTest {
     }
 
     @Test(priority = 9, dataProvider = "movie-trailer",
-            dataProviderClass = TestDataProvider.class,groups = "movie-detail")
+            dataProviderClass = TestDataProvider.class, groups = "movie-detail")
     public void verify_Play_Trailer_From_Search_Result(String[][] movieName) {
 
         homePage.openHalfScreen();
@@ -221,7 +221,7 @@ public class MovieDetailTest extends BaseTest {
     }
 
     @Test(priority = 10, dataProvider = "movie-trailer",
-            dataProviderClass = TestDataProvider.class,groups = "movie-detail")
+            dataProviderClass = TestDataProvider.class, groups = "movie-detail")
     public void verify_Trailer_Displayed_Correctly(String[][] movieName) {
         homePage.openHalfScreen();
 
@@ -250,7 +250,7 @@ public class MovieDetailTest extends BaseTest {
     }
 
     @Test(priority = 11, dataProvider = "movie-trailer",
-            dataProviderClass = TestDataProvider.class,groups = "movie-detail")
+            dataProviderClass = TestDataProvider.class, groups = "movie-detail")
     public void verify_Trailer_Plays_Normally(String[][] movieName) {
         ///Step 1: Click on movieName
         LOG.info("Step 1: Click on movieName");
@@ -271,7 +271,7 @@ public class MovieDetailTest extends BaseTest {
     }
 
     @Test(priority = 12, dataProvider = "movie-trailer",
-            dataProviderClass = TestDataProvider.class,groups = "movie-detail")
+            dataProviderClass = TestDataProvider.class, groups = "movie-detail")
     public void verify_Close_Trailer_By_Close_Button(String[][] movieName) {
         ///Step 1: Click on movieName
         LOG.info("Step 1: Click on movieName");
@@ -292,11 +292,11 @@ public class MovieDetailTest extends BaseTest {
         LOG.info("VP: Verify Trailer is close");
         ExtentReportManager.info("VP: Verify Trailer is close");
         boolean recordingTrailer = movieDetailPage.isTrailerDisplays();
-        Assert.assertFalse(recordingTrailer,"Trailer is still displayed after closing");
+        Assert.assertFalse(recordingTrailer, "Trailer is still displayed after closing");
     }
 
     @Test(priority = 13, dataProvider = "movie-trailer",
-            dataProviderClass = TestDataProvider.class,groups = "movie-detail")
+            dataProviderClass = TestDataProvider.class, groups = "movie-detail")
     public void verify_Close_Trailer_By_Clicking_Outside(String[][] movieName) {
         ///Step 1: Click on movieName
         LOG.info("Step 1: Click on movieName");
@@ -319,6 +319,6 @@ public class MovieDetailTest extends BaseTest {
         LOG.info("VP: Verify Trailer is close");
         ExtentReportManager.info("VP: Verify Trailer is close");
         boolean recordingTrailer = movieDetailPage.isTrailerDisplays();
-        Assert.assertFalse(recordingTrailer,"Trailer is still displayed after closing");
+        Assert.assertFalse(recordingTrailer, "Trailer is still displayed after closing");
     }
 }

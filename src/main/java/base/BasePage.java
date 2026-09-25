@@ -280,7 +280,7 @@ public class BasePage {
         return element.getCssValue(propertyName);
     }
 
-    ///Clear text
+    /// Clear text
     public void clearText(By locator) {
         WebElement element = waitVisibilityOfElementLocated(locator);
         element.click();
@@ -288,16 +288,17 @@ public class BasePage {
         element.sendKeys(Keys.BACK_SPACE);
     }
 
-    ///get Token
+    /// get Token
     public String getLocalStorage(String key) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         return (String) js.executeScript("return localStorage.getItem(arguments[0]);", key);
     }
 
-    ///Click outSide
+    /// Click outSide
     public void clickOutside() {
         new Actions(driver)
                 .sendKeys(Keys.ESCAPE)
                 .perform();
     }
+
 }

@@ -35,8 +35,8 @@ public class ProfilePage extends CommonPage {
 
         this.byLbHelpFullName = By.xpath("//p[@id='hoTen-helper-text']");
         this.byLbHelpNumPhone = By.xpath("//p[@id='soDt-helper-text']");
-        this.byLbHelpEmail= By.xpath("//p[@id='email-helper-text']");
-        this.byLbHelpPassword= By.xpath("//p[@id='matKhau-helper-text']");
+        this.byLbHelpEmail = By.xpath("//p[@id='email-helper-text']");
+        this.byLbHelpPassword = By.xpath("//p[@id='matKhau-helper-text']");
 
         this.byBtnUpdate = By.xpath("//button[span[text()='Cập Nhật']]");
     }
@@ -94,11 +94,11 @@ public class ProfilePage extends CommonPage {
         clearText(byTxtPassword);
     }
 
-    public void clearEmail(){
+    public void clearEmail() {
         clearText(byTxtEmail);
     }
 
-    public void clickUpdate(){
+    public void clickUpdate() {
         click(byBtnUpdate);
     }
 
@@ -132,7 +132,7 @@ public class ProfilePage extends CommonPage {
         sendKeys(byTxtEmail, email);
     }
 
-    public String getTxtPhoneNumber(){
+    public String getTxtPhoneNumber() {
         return getAttribute(byTxtPhone, "value");
     }
 

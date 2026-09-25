@@ -30,12 +30,12 @@ public class Footer extends BasePage {
     }
 
     public void clickLogoPartner(String logoPartner) {
-        byLogoPartner = By.xpath("//a[img[@alt='"+logoPartner+"']]");
+        byLogoPartner = By.xpath("//a[img[@alt='" + logoPartner + "']]");
         click(byLogoPartner);
     }
 
-    public void clickMobileApp(int index){
-        byMobileApp = By.xpath("(//a[img[@alt='']])["+index+"]");
+    public void clickMobileApp(int index) {
+        byMobileApp = By.xpath("(//a[img[@alt='']])[" + index + "]");
         click(byMobileApp);
     }
 
@@ -46,4 +46,5 @@ public class Footer extends BasePage {
     public void clickBoCongThuong() {
         click(byBoCongThuong);
     }
+
 }

@@ -43,20 +43,17 @@ public class BannerTest extends BaseTest {
 
     @Test(priority = 3, groups = "banner")
     public void verify_Banner_On_Different_Devices() {
-        // VP: Banner on Desktop
-        Assert.assertTrue(
-                banner.isAltTextDisplayed(),
-                "Banner is not displayed on Desktop"
-        );
-
+        /// VP: Banner on Desktop
+        LOG.info("VP: Banner on Desktop");
+        ExtentReportManager.info("VP: Banner on Desktop");
+        Assert.assertTrue(banner.isAltTextDisplayed(), "Banner is not displayed on Desktop");
         banner.switchToPhone();
 
         banner.refreshPage();
 
-        // VP: Banner on Phone
-        Assert.assertTrue(
-                banner.isAltTextDisplayed(),
-                "Banner is not displayed on Phone"
-        );
+        /// VP: Banner on Phone
+        LOG.info("VP: Banner on Phone");
+        ExtentReportManager.info("VP: Banner on Phone");
+        Assert.assertTrue(banner.isAltTextDisplayed(), "Banner is not displayed on Phone");
     }
 }

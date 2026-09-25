@@ -55,7 +55,7 @@ public class CommonModal extends BasePage {
         return getText(byMuiAlertMessage);
     }
 
-    public boolean isLbMessage(){
+    public boolean isLbMessage() {
         return isElementDisplayed(byLbMessage);
     }
 }

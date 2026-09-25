@@ -390,10 +390,8 @@ public class BookingTest extends BaseTest {
         Assert.assertEquals(recordingSeat, seatSold, "Seat status is incorrect");
     }
 
-    @Test(priority = 12,
-            dataProvider = "booking-history",
-            dataProviderClass = TestDataProvider.class, groups="booking")
-
+    @Test(priority = 12, dataProvider = "booking-history",
+            dataProviderClass = TestDataProvider.class, groups = "booking")
     public void verify_Booking_History_Information(String account, String password) {
         ///Step 1: Navigate to LoginPage
         LOG.info("Step 1: Navigate to LoginPage");

@@ -23,7 +23,7 @@ public class LogOut extends BasePage {
         click(byConfirmCancelLogOut);
     }
 
-    public String getToken(String key){
+    public String getToken(String key) {
         return getLocalStorage(key);
     }
 

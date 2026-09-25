@@ -199,8 +199,8 @@ public class TestDataProvider {
         return new Object[][]{
                 {
                         new String[][]{
-                                {"Man of Steel","Man of Steel - Official Trailer #2 [HD]"},
-                                {"John Cena WWE","John Cena WWE - Official Trailer #2 [HD]"}
+                                {"Man of Steel", "Man of Steel - Official Trailer #2 [HD]"},
+                                {"John Cena WWE", "John Cena WWE - Official Trailer #2 [HD]"}
                         }
                 }
         };

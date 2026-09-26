@@ -179,9 +179,9 @@ public class CinemaTest extends BaseTest {
 
         Assert.assertTrue(recordingSchedule, "Schedule is not displayed");
 
-        ///VP 2 : Verify Schedule isDisplay
-        LOG.info("VP 2 : Verify Schedule isDisplay");
-        ExtentReportManager.info("VP 2 : Verify Schedule isDisplay");
+        ///VP 2 : Verify Poster isDisplay
+        LOG.info("VP 2 : Verify Poster isDisplay");
+        ExtentReportManager.info("VP 2 : Verify Poster isDisplay");
         boolean recordingPoster = cinemaPage.isPosterDisplayed(movieName);
         Assert.assertFalse(recordingPoster, "Poster is displaying the text 'John Cena WWE'");
     }

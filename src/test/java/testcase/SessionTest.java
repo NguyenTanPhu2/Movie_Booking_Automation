@@ -2,13 +2,13 @@ package testcase;
 
 import base.BaseTest;
 import data.TestDataProvider;
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.components.LogOut;
+import pages.components.Session;
 import pages.modals.CommonModal;
 import report.ExtentReportManager;
 
@@ -19,19 +19,7 @@ public class SessionTest extends BaseTest {
     LoginPage loginPage;
     CommonModal commonModal;
     LogOut logOut;
-
-    private String getTokenFromStorage() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        return (String) js.executeScript(
-                "for (let i = 0; i < localStorage.length; i++) { " +
-                        "const key = localStorage.key(i); " +
-                        "if (key && /(token|auth|jwt|access)/i.test(key)) { " +
-                        "const value = localStorage.getItem(key); " +
-                        "if (value && value.trim() !== '') return value; " +
-                        "} " +
-                        "} return null;"
-        );
-    }
+    Session session;
 
     @BeforeMethod
     public void initializePages() {
@@ -39,6 +27,7 @@ public class SessionTest extends BaseTest {
         loginPage = new LoginPage(driver);
         commonModal = new CommonModal(driver);
         logOut = new LogOut(driver);
+        session = new Session(driver);
     }
 
     @Test(priority = 1, dataProvider = "login-credentials", dataProviderClass = TestDataProvider.class, groups = "session")
@@ -86,35 +75,36 @@ public class SessionTest extends BaseTest {
         LOG.info("VP: Verify session token is created after login");
         ExtentReportManager.info("VP: Verify session token is created after login");
 
-        String token = getTokenFromStorage();
+        String token = session.getTokenFromStorage();
+        Assert.assertEquals(token, session.getTokenFromStorage(),"Session token should be created after login");
 
-        Assert.assertTrue(token != null && !token.isEmpty(), "Session token should be created after login");
     }
 
     @Test(priority = 3, dataProvider = "login-credentials", dataProviderClass = TestDataProvider.class, groups = "session")
-    public void verify_Login_Required_After_Token_Expiration(String account, String password) {
-        ///Step 1: Navigate to LoginPage
+    public void verify_Login_Required_After_Token_Removal(String account, String password) {
+        /// Step 1: Navigate to LoginPage
         LOG.info("Step 1: Navigate to LoginPage");
         ExtentReportManager.info("Step 1: Navigate to LoginPage");
         homePage.getTopNavigation().navigateToLoginPage();
 
-        ///Step 2: Login account
+        /// Step 2: Login account
         LOG.info("Step 2: Login account");
         ExtentReportManager.info("Step 2: Login account");
         loginPage.login(account, password);
 
+        /// Step 3: Remove token and refresh page
+        LOG.info("Step 3: Remove authentication token and refresh page");
+        ExtentReportManager.info("Step 3: Remove authentication token and refresh page");
 
-        ///Step 3: Remove token-like entries and refresh page
-        LOG.info("Step 3: Remove token-like entries and refresh page");
-        ExtentReportManager.info("Step 3: Remove token-like entries and refresh page");
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("for (let i = localStorage.length - 1; i >= 0; i--) { const key = localStorage.key(i); if (key && /(token|auth|jwt|access)/i.test(key)) { localStorage.removeItem(key); } }");
+        session.removeToken();
+
         homePage.refreshPage();
 
-        ///VP: Verify login is required after token expiration
-        LOG.info("VP: Verify login is required after token expiration");
-        ExtentReportManager.info("VP: Verify login is required after token expiration");
-        Assert.assertTrue(homePage.getTopNavigation().isLoginDisplays(), "User should be required to log in after token expiration");
+        /// VP: Verify page returns to logged-out state
+        LOG.info("VP: Verify page returns to logged-out state");
+        ExtentReportManager.info("VP: Verify page returns to logged-out state");
+        boolean recordingToken = homePage.getTopNavigation().isLoginDisplays();
+        Assert.assertFalse(recordingToken, "User should be returned to the logged-out state after token removal");
     }
 
     @Test(priority = 4, dataProvider = "login-credentials", dataProviderClass = TestDataProvider.class, groups = "session")

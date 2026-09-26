@@ -256,8 +256,7 @@ public class LoginTest extends BaseTest {
         loginPage.login("", "");
     }
 
-    @Test(priority = 9,
-            dataProvider = "login-credentials",
+    @Test(priority = 9, dataProvider = "login-credentials",
             dataProviderClass = TestDataProvider.class, groups = "login")
     public void verify_Login_State_After_Refresh(String account, String password) {
         ///Step 1: Navigate to LoginPage

@@ -391,6 +391,11 @@ public class ProfileTest extends BaseTest {
         ExtentReportManager.info("Step 7: Enter email ");
         profilePage.enterEmail(email);
 
+        ///Step 8: Click btn Update
+        LOG.info("Step 8: Click btn Update");
+        ExtentReportManager.info("Step 8: Click btn Update");
+        profilePage.clickUpdate();
+
         ///VP: Verify Update Successfully
         LOG.info("VP: Verify Update Successfully");
         ExtentReportManager.info("VP: Verify Update Successfully");

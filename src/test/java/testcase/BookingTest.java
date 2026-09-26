@@ -130,6 +130,7 @@ public class BookingTest extends BaseTest {
         LOG.info("Step 3: Click Choose Seat");
         ExtentReportManager.info("Step 3: Click Choose Seat");
         bookingPage.clickOnSeat(numSeat);
+
         ///VP 1: Verify number seat
         LOG.info("VP 1: Verify number seat");
         ExtentReportManager.info("VP 1: Verify number seat");
@@ -270,7 +271,7 @@ public class BookingTest extends BaseTest {
 
     @Test(priority = 9, dataProvider = "booking-valid-seat",
             dataProviderClass = TestDataProvider.class, groups = "booking") //change numSeat
-    public void verify_Booking_Successfully(String account, String password, String movieName, String schedule, int numSeat) {
+    public void verify_Booking_Successfully(String account, String password, String movieName, String schedule, String numSeat) {
         ///Step 1: Navigate Login page
         LOG.info("Step 1: Navigate Login page");
         ExtentReportManager.info("Step 1: Navigate Login page");

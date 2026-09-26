@@ -67,7 +67,7 @@ public class SearchingTest extends BaseTest {
     }
 
 
-    @Test(priority = 2,
+    @Test(priority = 3,
             dataProvider = "search-non-existing",
             dataProviderClass = TestDataProvider.class, groups = "searching")
     public void verify_Search_Non_Existing_Movie(String movieName) {
@@ -86,7 +86,7 @@ public class SearchingTest extends BaseTest {
         Assert.assertEquals(recordingFilmDisplay, "Không có bộ phim nào trùng với từ khóa của bạn.", "Movie is not displayed");
     }
 
-    @Test(priority = 3,
+    @Test(priority = 4,
             dataProvider = "search-select-result",
             dataProviderClass = TestDataProvider.class, groups = "searching")
     public void verify_Select_Movie_From_Search_Result(String movieName) {
@@ -110,7 +110,7 @@ public class SearchingTest extends BaseTest {
         Assert.assertEquals(recordingFilmDisplay, movieName, "It is not navigate movie detail ");
     }
 
-    @Test(priority = 4, groups = "searching")
+    @Test(priority = 5, groups = "searching")
     public void verify_Search_With_Empty_Input() {
         searching.openHalfScreen();
 
@@ -126,7 +126,7 @@ public class SearchingTest extends BaseTest {
         Assert.assertTrue(recordingSearchingResult, "Search result is displayed when search input contains whitespace");
     }
 
-    @Test(priority = 5, groups = "searching")
+    @Test(priority = 6, groups = "searching")
     public void verify_Search_With_Whitespace() {
         searching.openHalfScreen();
 

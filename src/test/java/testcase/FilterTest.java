@@ -81,7 +81,7 @@ public class FilterTest extends BaseTest {
     }
 
     @Test(priority = 4, dataProvider = "filter-data",
-            dataProviderClass = TestDataProvider.class)
+            dataProviderClass = TestDataProvider.class,groups = "filter")
     public void verify_Schedule_Dropdown_After_Selecting_Cinema(String movieName, String cinemaName, String schedule) {
 
         ///Step 1: Select film

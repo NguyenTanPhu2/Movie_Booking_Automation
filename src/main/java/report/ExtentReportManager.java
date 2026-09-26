@@ -17,7 +17,7 @@ import java.time.format.DateTimeFormatter;
 public class ExtentReportManager {
 
     private static ExtentReports extent;
-    private static ThreadLocal<ExtentTest> test = new ThreadLocal<>(); // mỗi thread 1 ExtentTest
+    private static final ThreadLocal<ExtentTest> test = new ThreadLocal<>(); // mỗi thread 1 ExtentTest
     /// Toan bo test case chay song song --> moi test case se tao 1 thread rieng biet --> moi thread se tao 1 ExtentTest rieng biet
     private static final String REPORT_PATH = "testReport_output/ExtentReport_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_hh_mm_ss")) + ".html";
     private static final String SCREENSHOT_PATH = "testReport_output/screenshots/";
@@ -31,8 +31,22 @@ public class ExtentReportManager {
         extent.setSystemInfo("User", System.getProperty("user.name"));
     }
 
-    public static void createTest(String testName) {
+    public static void createTest(String testName, String... groups) {
         ExtentTest extentTest = extent.createTest(testName);
+
+        if (groups != null) {
+            for (String group : groups) {
+                if (group != null && !group.trim().isEmpty()) {
+                    extentTest.assignCategory(group);
+                }
+            }
+        }
+
+        if (groups != null && groups.length > 0) {
+            String groupSummary = String.join(", ", groups);
+            extentTest.info("TestNG Groups: " + groupSummary);
+        }
+
         test.set(extentTest);
     }
 

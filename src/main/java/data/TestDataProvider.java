@@ -368,7 +368,7 @@ public class TestDataProvider {
                 {
                         "gái già lắm chiêu",
                         "21-12-2021",
-                        22,
+                        146,
                         "CGV - Vincom Gò Vấp"
                 }
         };
@@ -391,8 +391,8 @@ public class TestDataProvider {
                 {
                         "gái già lắm chiêu",
                         "21-12-2021",
-                        22,
-                        "Ghế 22,",
+                        146,
+                        "Ghế 146,",
                         "75000VND"
                 }
         };
@@ -444,7 +444,7 @@ public class TestDataProvider {
                         "gái già lắm chiêu",
                         "21-12-2021",
                         "X",
-                        "04"
+                        "08"
                 }
         };
     }
@@ -479,7 +479,7 @@ public class TestDataProvider {
                         "Clara@2026",
                         "gái già lắm chiêu",
                         "21-12-2021",
-                        147
+                        "10"
                 }
         };
     }
@@ -490,7 +490,7 @@ public class TestDataProvider {
                 {
                         "gái già lắm chiêu",
                         "21-12-2021",
-                        10
+                        146
                 }
         };
     }
@@ -641,7 +641,7 @@ public class TestDataProvider {
         return new Object[][]{
                 {
                         "gái già lắm chiêu",
-                        22,
+                        113,
                         "21-12-2021"
                 }
         };
@@ -668,6 +668,13 @@ public class TestDataProvider {
     public static Object[][] profileLogin() {
         return new Object[][]{
                 {"Clara", "Clara@2026"}
+        };
+    }
+
+    @DataProvider(name = "profile-update-phone-number")
+    public static Object[][] profileUpdtaPhoneNumber() {
+        return new Object[][]{
+                {"Clara", "Clara@2026","037921182178"}
         };
     }
 

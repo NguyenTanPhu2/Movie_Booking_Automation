@@ -128,7 +128,7 @@ public class ProfilePage extends CommonPage {
     }
 
     public void enterEmail(String email) {
-        clearPassword();
+        clearEmail();
         sendKeys(byTxtEmail, email);
     }
 

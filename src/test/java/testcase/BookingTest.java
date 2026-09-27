@@ -71,7 +71,7 @@ public class BookingTest extends BaseTest {
 
     @Test(priority = 2, dataProvider = "booking-seat-legend",
             dataProviderClass = TestDataProvider.class, groups = "booking")
-    public void verify__Displayed(String movieName, String schedule) {
+    public void verify_seat_legend_Displayed(String movieName, String schedule) {
         ///Step 1: Click name film to movieDetails
         LOG.info("Step 1: Click name film to movieDetails");
         ExtentReportManager.info("Step 1: Click name film to movieDetails");

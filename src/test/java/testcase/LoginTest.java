@@ -269,7 +269,10 @@ public class LoginTest extends BaseTest {
         ExtentReportManager.info("Step 2: Login Account");
         loginPage.login(account, password);
 
-        commonModal.getWebDriverWait(TimeOutConstants.DEFAULT_TIMEOUT);
+        if(commonModal.isLbMessage())
+        {
+            commonModal.waitModalDisappear();
+        }
 
         ///Step 5: Refresh Page
         LOG.info("Step 5: Refresh Page");

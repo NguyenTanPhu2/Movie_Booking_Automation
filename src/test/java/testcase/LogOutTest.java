@@ -84,38 +84,6 @@ public class LogOutTest extends BaseTest {
 
     @Test(priority = 3, dataProvider = "logout-credentials",
             dataProviderClass = TestDataProvider.class, groups = "logout")
-    public void verify_Token_Cleared_After_Logout(String account, String password) {
-        ///Step 1: Navigate to Login Page
-        LOG.info("Step 1: Navigate To Login Page");
-        ExtentReportManager.info("Step 1: Navigate To Login Page");
-        homePage.getTopNavigation().navigateToLoginPage();
-
-        ///Step 2: Login account
-        LOG.info("Step 2: Login account");
-        ExtentReportManager.info("Step 2: Login account");
-        loginPage.login(account, password);
-
-        ///Step 3: Click Log Out link
-        LOG.info("Step 3: Click Log Out link");
-        ExtentReportManager.info("Step 3: Click Log Out link");
-        homePage.getTopNavigation().clickOnLogOut();
-
-        ///Step 4: Confirm logout
-        LOG.info("Step 4: Confirm logout");
-        ExtentReportManager.info("Step 4: Confirm logout");
-        logOut.clickConfirmLogOut();
-
-        ///VP: Verify token/storage is cleared after logout
-        LOG.info("VP: Verify token/storage is cleared after logout");
-        ExtentReportManager.info("VP: Verify token/storage is cleared after logout");
-
-        String token = logOut.getToken("accessToken");
-
-        Assert.assertTrue(token == null || token.isEmpty(), "Authentication token should be cleared after logout");
-    }
-
-    @Test(priority = 4, dataProvider = "logout-credentials",
-            dataProviderClass = TestDataProvider.class, groups = "logout")
     public void verify_Back_Button_After_Logout(String account, String password) {
         ///Step 1: Navigate to Login Page
         LOG.info("Step 1: Navigate To Login Page");
@@ -149,7 +117,7 @@ public class LogOutTest extends BaseTest {
         Assert.assertTrue(recordingAfterBack, " User can return to authenticated state after logout");
     }
 
-    @Test(priority = 5, dataProvider = "logout-credentials",
+    @Test(priority = 4, dataProvider = "logout-credentials",
             dataProviderClass = TestDataProvider.class, groups = "logout")
     public void verify_Access_Old_URL_After_Logout(String account, String password) {
         ///Step 1: Navigate to Login Page

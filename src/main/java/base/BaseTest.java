@@ -26,7 +26,7 @@ public class BaseTest {
         LOG.info("BeforeSuite executing...");
         //khoi tao folder report
         ExtentReportManager.initializeExtentReports();
-        ConfigManager.loadProperties(); //Khoi tao device
+        ConfigManager.loadProperties(); //Khoi tao browser va baseUrl
         LOG.info("BeforeSuite ended...");
     }
 

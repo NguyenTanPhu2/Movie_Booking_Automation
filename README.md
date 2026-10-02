@@ -129,13 +129,13 @@ movie_booking
 │           ├── extent-config.xml
 │           ├── extent.properties
 │           ├── extent-pdf-config.yml
-│           └── log4j2.xml
+│           ├──  log4j2.xml
+│           └── testng-parallel.xml
 │
 ├── docs
 │   └── images
 │       └── extent-report-sample.png
 │
-├── testng-parallel.xml
 ├── build.gradle
 ├── settings.gradle
 ├── gradlew

@@ -13,4 +13,12 @@
         </packages>
     </test>
 
+<!--    <test name="smoke">-->
+<!--        <classes>-->
+<!--            <class name="testcase.BannerTest"/>-->
+<!--            <class name="testcase.LoginTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+
 </suite>
